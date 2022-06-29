@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container" style="background-color:white; margin-left:380px;width:560px;">
+    
+    <img src={{pro.image.url}} style="height: 320px;margin-left:150px;">
+    <div style="margin-left:180px;">
+    <h5> {{pro.name}}</h5>
+    <h5>${{pro.price}}</h5>
+    <a href="{% url 'cartitem' pro.id user.id %}" class="btn btn-light">Add to cart</a>
+</div>
+    </div>
+{% endblock %}

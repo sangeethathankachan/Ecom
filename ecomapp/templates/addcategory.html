@@ -1,0 +1,21 @@
+{% extends 'baseadmin.html' %}
+{% block body %}
+<div class=" container">
+    <table  align="center" >
+
+    
+        <form action="{% url 'addcategory' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <h3 align="center">Add categories</h3><br>
+                <div class="form-group" align="center">
+                   
+            <input type="text" name="categoryname" placeholder="Enter Category" class="form-control w-25"><br>
+            <!-- <input type="file" name="file"  class="form-control w-25" accept="image/*"><br> -->
+            <input type="submit"  value="Submit" class="form-control w-25 btn btn-dark"><br>
+    
+       </div>
+       </form>
+       </table>
+</div>
+
+{% endblock %}

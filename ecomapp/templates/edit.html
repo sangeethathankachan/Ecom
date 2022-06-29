@@ -1,0 +1,62 @@
+{% extends 'baseadmin.html' %}
+{% block body %}
+{% load static %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <table border='0' width='480px' cellpadding='0' cellspacing='0' align='center' >
+        <center><tr>
+           <td><h2><b style="font-family: Times New Roman, Times, serif; ">Edit Products </b></h2></td>
+        </tr><center>
+    <table border='0' width='500' align='center' >
+        
+        <tr> <td>&nbsp;</td> </tr>
+        <tr>
+            <td align='center'><b>Product Name:</b></td>
+            <td><input type='text' name='name' value="{{pro.name}}"></td>
+        </tr>
+        <tr> <td>&nbsp;</td> </tr>
+        <tr>
+            <td align='center'><b>Price:</b></td>
+            <td><input type='text' name='price' value="{{pro.price}}"></td> 
+        </tr>
+        <tr> <td>&nbsp;</td> </tr>
+        <tr>
+       
+            <img width="70px" src='{{ pro.image.url }}'>
+        <input type="file" name="file"  class="form-control w-25" accept="image/*"><br>
+        </tr>
+        <tr> <td>&nbsp;</td> </tr>
+       
+        <tr><td align='center'><b>Category:</b></td><td>
+          
+            <select name="sel">
+                <!-- <option value="">Select course</option><br> -->
+                {% for c in cat %}
+                {% if c.id == pro.category.id %}
+                    <option value="{{ c.id }}" selected>{{ c.categoryname }}</option> 
+               
+               {% else %}
+               <option value="{{ c.id }}" >{{ c.categoryname }}</option> 
+               {% endif %}
+                {% endfor %}
+                </select></td>
+        </tr>
+       
+        <tr> <td>&nbsp;</td> </tr>
+        
+        <table border='0' cellpadding='0' cellspacing='0' width='480px' align='center'>
+        <tr>
+            <td align='center'><input type='submit' class="btn btn-sm btn-info" name='REGISTER' value="Update"></td>
+        </tr>
+        
+
+
+        
+        </table>
+        
+        </table>
+        
+    </table>
+    
+    </form>
+{% endblock %}

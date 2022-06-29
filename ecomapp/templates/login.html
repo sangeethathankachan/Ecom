@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block body %}
+<table  align="center" >
+
+    
+    <!-- <form action="{% url 'login_user' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <h3 align="center">LOGIN FORM</h3><br>
+            <div class="form-group" align="center">
+               
+        <input type="text" name="username" placeholder="username" class="form-control w-25" required><br>
+        <input type="password" name="password" placeholder="password" class="form-control w-25" required><br>
+        <input type="submit"  value="Login" class="form-control w-25 btn btn-info"><br>
+        <a href="{% url 'register' %}">Register</a>
+
+   </div>
+  
+    </form> -->
+    
+
+    <section class="vh-80">
+        <div class="container-fluid h-custom" style="margin-top: 80px;">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <form action="{% url 'login_user' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <h3 align="center">SIGN IN</h3><br>
+                    <div class="form-group" align="center">
+               
+                <input type="text" name="username" placeholder="Username" class="form-control w-50"><br>
+                <input type="password" name="password" placeholder="Password" class="form-control w-50"><br>
+                
+                <input type="submit"  value="Sign in" class="form-control w-50 btn btn-info"><br>
+                        Don't have an account? <a href="{% url 'signup' %}">Register</a>
+           </div></form>
+            </div>
+
+
+
+
+            
+          </div>
+        </div>
+        
+      </section>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!-- Quantity and Price Section -->
+<div class = 'container' style = "width: 70%">
+    <table class="table table-light table-hover">
+        <thead>
+          <tr>
+            <th scope="col"><a href="" class="btn btn-primary btn-sm"><- Continue Shopping </a></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+         
+          <tr>
+            <th scope="row"><h5>Items: </h5></th>
+            <td></td>
+            <td><h5>{{cartitems.product.name}}</h5></td>
+            <!-- <td></td> -->
+            <td><button type="button" class="btn btn-primary btn-sm">Checkout →</button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- Cart Section -->
+<div class = 'container' style = 'margin-top: 50px; width: 70%'>
+<table class="table table-light table-hover">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"><h6>Item</h6></th>
+        <th scope="col"><h6>Price</h6></th>
+        <th scope="col"><h6>Quantity</h6></th>
+        <th scope="col"><h6>Total</h6></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for item in cartitems %}
+      <tr>
+        <th scope="row"><div id = "cart_image"><img src = ''></div></th>
+        <td>{{item.product.name}}</td>
+        <td>{{item.product.price}}</td>
+      
+        <td><input type = 'number' class = 'quantity' value = "" style = 'width: 50px; padding-left: 5px'></td>
+        <td>{{item.product.price}}</td>
+      </tr>
+      {% endfor %}
+      
+      
+    </tbody>
+  </table>
+</div>
+{% endblock %}

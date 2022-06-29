@@ -1,0 +1,27 @@
+{% extends 'baseadmin.html' %}
+{% block body %}
+<div class=" container">
+    <table  align="center" >
+
+    
+        <form action="{% url 'addpro' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <h3 align="center">Add Product</h3><br>
+                <div class="form-group" align="center">
+            <input type="text" name="name" placeholder="Product name" class="form-control w-25" ><br>
+            <input type="text" name="price" placeholder="Product price" class="form-control w-25" ><br>
+            <input type="file" name="file"  class="form-control w-25" accept="image/*"><br>
+            <select class="form-control w-25" name="sel">
+            <option value="">Select category</option><br>
+            {% for i in cat %}
+            <option value="{{i.id}}" >{{i.categoryname}}</option><br>
+            {% endfor %}
+            </select><br>
+            <input type="submit"  value="Submit" class="form-control w-25 btn btn-dark"><br>
+            
+       </div>
+       </form>
+       </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{%extends 'base.html' %}
+{% block body %}
+
+
+<div  class="card" style="width: 250px; left :500px;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body" >
+      <p class="card-text">Firstname:&nbsp;&nbsp;{{std.first_name }}</p>
+      <p class="card-text">Lastname:&nbsp;&nbsp;{{std.last_name }}</p>
+      <p class="card-text">Username:&nbsp;&nbsp;{{std.username }}</p>
+      <p class="card-text">Email:&nbsp;&nbsp;{{std.email }}</p>
+      
+  </div>
+
+{% endblock %}
